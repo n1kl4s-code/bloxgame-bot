@@ -1,5 +1,1 @@
 discord
-os
-hashlib
-hmac
-binascii

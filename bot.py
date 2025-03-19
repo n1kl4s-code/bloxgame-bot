@@ -59,6 +59,7 @@ async def mines(interaction: discord.Interaction, client_seed: str, server_seed:
     try:
         gridArray = get_mine_locations(client_seed, server_seed, nonce, mines_count)
         grid = [gridArray[i:i+5] for i in range(0, 25, 5)]
+        gridString = "\n".join(grid)
         await interaction.response.send_message(grid)
     except Exception as e:
         await interaction.response.send_message(f"Prediction failed: {e}", ephemeral=True)
